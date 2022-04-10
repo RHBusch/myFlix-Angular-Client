@@ -29,7 +29,7 @@ export class ProfilePageComponent implements OnInit {
     let user = localStorage.getItem('Username');
     console.log(user);
     if (user) {
-      this.fetchApiData.getUser().subscribe((resp: any) => {
+      this.fetchApiData.getUserFavorites().subscribe((resp: any) => {
         this.user = resp;
         console.log(this.user);
         this.getFavMovie
@@ -40,7 +40,7 @@ export class ProfilePageComponent implements OnInit {
   getFavMovie(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.favoriteMovies = resp.filter((movie: any) => {
-        return this.user.FavoriteMovies.includes(movie._id)
+        return this.user.favoriteMovies.includes(movie._id)
       })
       console.log(this.favoriteMovies);
       return this.favoriteMovies;
