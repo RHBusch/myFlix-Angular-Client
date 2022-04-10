@@ -9,14 +9,9 @@
     Birthday:
     {{ user.Birthday | date: "mediumDate" }}
 </mat-card-content>
-<mat-card-actions>
-    <!-- <button mat-raised-button (click)="updateUserDetails()">
-      Update Profile
-    </button>
-    <button mat-raised-button color="warn" (click)="deleteUser()">
-      Delete Account
-    </button>-->
-</mat-card-actions>
+<button mat-raised-button (click)="deleteUser()" color="primary">
+    Delete Test
+</button>
 <div style="text-align: center">
     <h2>Your Favorites</h2>
     <div class="card-group" style="display: flex; flex-wrap: wrap; justify-content: center">

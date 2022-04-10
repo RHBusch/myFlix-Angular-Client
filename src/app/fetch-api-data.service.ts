@@ -125,10 +125,11 @@ export class FetchApiDataService {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
-        }),
-    })
-      .pipe(map(this.extractResponseData),
-        catchError(this.handleError));
+        })
+    }).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
   }
 
   //Delete favorite movies for a user

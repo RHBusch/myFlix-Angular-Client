@@ -5,9 +5,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-
-
-
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -15,19 +12,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
-  favoriteMovies: any = [];
+  favoriteMovies: any[] = [];
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
     public router: Router,
     public snackBar: MatSnackBar
   ) { }
-
   ngOnInit(): void {
     this.getMovies();
     this.getFavMovie();
   }
-
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -35,15 +30,14 @@ export class MovieCardComponent implements OnInit {
       return this.movies
     })
   }
-
   getFavMovie(): void {
-    const user = localStorage.getItem('user');
     this.fetchApiData.getUserFavorites().subscribe((resp: any) => {
       this.favoriteMovies = resp.FavoriteMovies;
       return this.favoriteMovies;
     });
   }
   addFavoriteMovie(id: string): void {
+    console.log(id);
     this.fetchApiData.addFavoriteMovie(id).subscribe((resp: any) => {
       this.favoriteMovies = resp.FavoriteMovies;
       console.log(this.favoriteMovies);
@@ -51,7 +45,7 @@ export class MovieCardComponent implements OnInit {
         duration: 5000,
       });
       this.ngOnInit();
+      this.getFavMovie
     });
   }
 }
-

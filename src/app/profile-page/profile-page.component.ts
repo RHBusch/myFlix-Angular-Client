@@ -56,4 +56,19 @@ export class ProfilePageComponent implements OnInit {
       return this.favoriteMovies
     });
   }
+  deleteUser(): void {
+    if (confirm('You sure?')) {
+      this.fetchApiData.deleteUser().subscribe(() => {
+        this.snackBar.open('Account deleted', 'ok', {
+          duration: 3000,
+        });
+        localStorage.clear();
+      }, () => {
+        this.router.navigate(['Welcome']).then(() => {
+          window.location.reload();
+        })
+      })
+    }
+  }
 }
+
