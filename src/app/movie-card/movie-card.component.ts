@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { FetchApiDataService } from '../fetch-api-data.service'
 
+
+
+
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -15,6 +18,7 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies()
+
   }
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
@@ -24,3 +28,4 @@ export class MovieCardComponent implements OnInit {
     })
   }
 }
+

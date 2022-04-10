@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
 import { LoginFormComponent } from '../login-form/login-form.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ProfilePageComponent } from '../profile-page/profile-page.component';
 
 
 @Component({
@@ -26,6 +27,5 @@ export class WelcomePageComponent implements OnInit {
       width: '280px'
     })
   }
-
 
 }
