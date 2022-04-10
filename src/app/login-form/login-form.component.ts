@@ -6,6 +6,8 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -17,7 +19,8 @@ export class LoginFormComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<LoginFormComponent>,
-    public snackBar: MatSnackBar) { }
+    public snackBar: MatSnackBar,
+    private router: Router) { }
   ngOnInit(): void { }
 
   loginUser(): void {
@@ -29,6 +32,7 @@ export class LoginFormComponent implements OnInit {
       this.snackBar.open('login successful', 'Ok', {
         duration: 2000
       });
+      this.router.navigate(['movies']);
     }, (result) => {
       this.snackBar.open(result, 'ok', {
         duration: 2000

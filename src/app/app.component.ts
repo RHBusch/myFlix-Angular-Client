@@ -11,18 +11,4 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class AppComponent {
   title = 'myFlix-Angular-Client';
-  constructor(public dialog: MatDialog) { }
-  openUserRegistrationDialog(): void {
-    this.dialog.open(UserRegistrationFormComponent, {
-      width: '280px'
-    })
-  }
-  openUserLoginDialog(): void {
-    this.dialog.open(LoginFormComponent, {
-      width: '280px'
-    })
-  }
-  openMoviesDialog(): void {
-    this.dialog.open(MovieCardComponent, { width: '500px' })
-  }
 }
