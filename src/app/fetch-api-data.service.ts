@@ -121,15 +121,16 @@ export class FetchApiDataService {
   //Add fav movies to a user's profile
 
   addFavoriteMovie(id: string): Observable<any> {
-    return this.http.post(apiUrl + `users/${username}/movies/${id}`, {
-      headers: new HttpHeaders(
-        {
-          Authorization: 'Bearer ' + token,
-        })
-    }).pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
+    return this.http
+      .post(apiUrl + `users/${username}/movies/${id}`, null, {
+        headers: new HttpHeaders(
+          {
+            Authorization: 'Bearer ' + token,
+          })
+      }).pipe(
+        map(this.extractResponseData),
+        catchError(this.handleError)
+      );
   }
 
   //Delete favorite movies for a user
