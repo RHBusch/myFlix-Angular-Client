@@ -23,6 +23,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { DisplaySynopsisComponent } from './display-synopsis/display-synopsis.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -39,7 +40,8 @@ const appRoutes: Routes = [
     LoginFormComponent,
     MovieCardComponent,
     WelcomePageComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    DisplaySynopsisComponent
   ],
   imports: [
     BrowserModule,

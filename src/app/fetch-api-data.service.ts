@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { Observable, throwError, catchError } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 //Declaring api url providing data to the client app 
 const apiUrl = 'https://busch-movie-api.herokuapp.com/';

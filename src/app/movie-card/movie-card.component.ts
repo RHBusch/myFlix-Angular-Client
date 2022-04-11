@@ -4,6 +4,7 @@ import { FetchApiDataService } from '../fetch-api-data.service'
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DisplaySynopsisComponent } from '../display-synopsis/display-synopsis.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -33,6 +34,7 @@ export class MovieCardComponent implements OnInit {
   getFavMovie(): void {
     this.fetchApiData.getUserFavorites().subscribe((resp: any) => {
       this.favoriteMovies = resp.FavoriteMovies;
+      console.log(this.favoriteMovies)
       return this.favoriteMovies;
     });
   }
@@ -48,4 +50,17 @@ export class MovieCardComponent implements OnInit {
       this.getFavMovie
     });
   }
+
+  displaySynopsis(title: string, imagePath: any, description: string): void {
+    this.dialog.open(DisplaySynopsisComponent, {
+      data: {
+        Title: title,
+        ImagePath: imagePath,
+        Description: description,
+      },
+      width: '500px',
+    });
+  }
+
+
 }
