@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DisplaySynopsisComponent } from '../display-synopsis/display-synopsis.component';
+import { DisplayGenreComponent } from '../display-genre/display-genre.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -56,6 +57,16 @@ export class MovieCardComponent implements OnInit {
       data: {
         Title: title,
         ImagePath: imagePath,
+        Description: description,
+      },
+      width: '500px',
+    });
+  }
+
+  displayGenre(name: string, description: string): void {
+    this.dialog.open(DisplayGenreComponent, {
+      data: {
+        Name: name,
         Description: description,
       },
       width: '500px',
