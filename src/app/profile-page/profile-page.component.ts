@@ -64,7 +64,7 @@ export class ProfilePageComponent implements OnInit {
         });
         localStorage.clear();
       }, () => {
-        this.router.navigate(['Welcome']).then(() => {
+        this.router.navigate(['welcome']).then(() => {
           window.location.reload();
         })
       })
