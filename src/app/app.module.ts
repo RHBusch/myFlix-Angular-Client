@@ -26,6 +26,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { DisplaySynopsisComponent } from './display-synopsis/display-synopsis.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DisplayGenreComponent } from './display-genre/display-genre.component';
+import { DisplayDirectorComponent } from './display-director/display-director.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     ProfilePageComponent,
     DisplaySynopsisComponent,
     NavbarComponent,
-    DisplayGenreComponent
+    DisplayGenreComponent,
+    DisplayDirectorComponent
   ],
   imports: [
     BrowserModule,
