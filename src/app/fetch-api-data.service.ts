@@ -167,7 +167,7 @@ export class FetchApiDataService {
   deleteUser(): Observable<any> {
     return this.http.delete(apiUrl + `users/remv/${username}`, {
       headers: new HttpHeaders({
-        Authorization: 'Bearer' + token,
+        Authorization: 'Bearer ' + token,
       })
     }).pipe(
       map(this.extractResponseData),
