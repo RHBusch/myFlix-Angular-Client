@@ -27,9 +27,11 @@ export class DisplayEditUserComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
   editUser(): void {
     const username = localStorage.getItem('Username') || ""; //This "or null" allows the string to receive a null value rather than an error. 
-    this.fetchApiData.editUser(username, this.userData).subscribe((response) => this.dialogRef.close)
+    this.fetchApiData.editUser(username, this.userData).subscribe((response) => { this.dialogRef.close() })
   }
 
 }
