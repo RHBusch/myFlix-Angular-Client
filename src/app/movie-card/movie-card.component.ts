@@ -53,6 +53,19 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  deleteFavoriteMovie(id: string): void {
+    console.log(id);
+    this.fetchApiData.deleteFavoriteMovie(id).subscribe((resp: any) => {
+      this.favoriteMovies = resp.FavoriteMovies;
+      console.log(this.favoriteMovies);
+      this.snackBar.open('Movie has been removed from favorites', 'ok', {
+        duration: 5000,
+      });
+      this.ngOnInit();
+      this.getFavMovie
+    });
+  }
+
   displaySynopsis(title: string, imagePath: any, description: string): void {
     this.dialog.open(DisplaySynopsisComponent, {
       data: {
@@ -84,5 +97,13 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  isFavorite(id: string): boolean {
+    return this.favoriteMovies.includes(id);
+  }
 
+  toggleFavorite(movie: any): void {
+    this.isFavorite(movie._id)
+      ? this.deleteFavoriteMovie(movie._id)
+      : this.addFavoriteMovie(movie._id)
+  }
 }
