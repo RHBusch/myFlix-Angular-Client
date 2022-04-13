@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { FetchApiDataService } from '../fetch-api-data.service'
+import { DisplayEditUserComponent } from '../display-edit-user/display-edit-user.component';
 
 @Component({
   selector: 'app-profile-page',
@@ -67,8 +68,16 @@ export class ProfilePageComponent implements OnInit {
         this.router.navigate(['welcome']).then(() => {
           window.location.reload();
         })
+
       })
     }
+  }
+
+
+  displayEditUser(): void {
+    this.dialog.open(DisplayEditUserComponent, {
+      width: '500px',
+    });
   }
 }
 

@@ -27,6 +27,7 @@ import { DisplaySynopsisComponent } from './display-synopsis/display-synopsis.co
 import { NavbarComponent } from './navbar/navbar.component';
 import { DisplayGenreComponent } from './display-genre/display-genre.component';
 import { DisplayDirectorComponent } from './display-director/display-director.component';
+import { DisplayEditUserComponent } from './display-edit-user/display-edit-user.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     DisplaySynopsisComponent,
     NavbarComponent,
     DisplayGenreComponent,
-    DisplayDirectorComponent
+    DisplayDirectorComponent,
+    DisplayEditUserComponent
   ],
   imports: [
     BrowserModule,
