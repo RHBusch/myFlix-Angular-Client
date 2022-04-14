@@ -12,7 +12,6 @@ import { DisplayEditUserComponent } from '../display-edit-user/display-edit-user
 })
 export class ProfilePageComponent implements OnInit {
   user: any = {};
-  Username = localStorage.getItem('user');
   movies: any[] = [];
   favoriteMovies: any = [];
   constructor(
@@ -29,13 +28,11 @@ export class ProfilePageComponent implements OnInit {
   getUser(): void {
     let user = localStorage.getItem('Username');
     console.log(user);
-    if (user) {
-      this.fetchApiData.getUserFavorites().subscribe((resp: any) => {
-        this.user = resp;
-        console.log(this.user);
-        this.getFavMovie
-      })
-    }
+    this.fetchApiData.getUserFavorites().subscribe((resp: any) => {
+      this.user = resp;
+      console.log(this.user);
+      this.getFavMovie();
+    })
   }
 
   getFavMovie(): void {
