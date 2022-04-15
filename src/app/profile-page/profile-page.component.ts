@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
@@ -12,8 +12,10 @@ import { DisplayEditUserComponent } from '../display-edit-user/display-edit-user
 })
 export class ProfilePageComponent implements OnInit {
   user: any = {};
+  Username: any = localStorage.getItem('Username')
   movies: any[] = [];
   favoriteMovies: any = [];
+
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
@@ -23,15 +25,13 @@ export class ProfilePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
-    this.getFavMovie();
   }
   getUser(): void {
-    let user = localStorage.getItem('Username');
+    const user = localStorage.getItem('Username');
     console.log(user);
     this.fetchApiData.getUserFavorites().subscribe((resp: any) => {
       this.user = resp;
       console.log(this.user);
-      this.getFavMovie();
     })
   }
 
@@ -69,7 +69,6 @@ export class ProfilePageComponent implements OnInit {
       })
     }
   }
-
 
   displayEditUser(): void {
     this.dialog.open(DisplayEditUserComponent, {
