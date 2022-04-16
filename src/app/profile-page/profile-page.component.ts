@@ -25,6 +25,7 @@ export class ProfilePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
+    this.getFavMovie();
   }
   getUser(): void {
     const user = localStorage.getItem('Username');
@@ -37,13 +38,24 @@ export class ProfilePageComponent implements OnInit {
 
   getFavMovie(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-      this.favoriteMovies = resp.filter((movie: any) => {
-        return this.user.favoriteMovies.includes(movie._id)
+      this.movies = resp;
+      this.movies.forEach((movie: any) => {
+        if (this.user.FavoriteMovies.includes(movie._id)) {
+          this.favoriteMovies.push(movie);
+        }
       })
-      console.log(this.favoriteMovies);
-      return this.favoriteMovies;
-    })
+    });
   }
+
+
+
+  /* .filter((movie: any) => {
+     return this.user.favoriteMovies.includes(movie._id)
+   })
+   console.log(this.favoriteMovies);
+   return this.favoriteMovies;
+ })
+*/
 
   deleteFavoriteMovie(id: string): void {
     this.fetchApiData.deleteFavoriteMovie(id).subscribe((resp: any) => {
