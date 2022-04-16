@@ -17,11 +17,11 @@ export class DisplayEditUserComponent implements OnInit {
   user: any = {}
 
 
-  @Input() userData = {
-    Username: "this.user.Username",
-    Password: "this.user.Password",
-    Email: "this.user.Email",
-    Birthday: "this.user.Birthday",
+  @Input() userData: any = {
+    Username: "",
+    Password: "",
+    Email: "",
+    Birthday: "",
   };
 
   constructor(
