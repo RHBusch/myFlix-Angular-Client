@@ -76,4 +76,3 @@ export class ProfilePageComponent implements OnInit {
     });
   }
 }
-
