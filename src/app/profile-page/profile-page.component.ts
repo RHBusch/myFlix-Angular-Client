@@ -47,21 +47,12 @@ export class ProfilePageComponent implements OnInit {
     });
   }
 
-
-
-  /* .filter((movie: any) => {
-     return this.user.favoriteMovies.includes(movie._id)
-   })
-   console.log(this.favoriteMovies);
-   return this.favoriteMovies;
- })
-*/
-
   deleteFavoriteMovie(id: string): void {
     this.fetchApiData.deleteFavoriteMovie(id).subscribe((resp: any) => {
       this.snackBar.open('Removed from favorite movies.', 'ok', {
         duration: 2000,
       })
+      window.location.reload();
       this.ngOnInit();
       return this.favoriteMovies
     });

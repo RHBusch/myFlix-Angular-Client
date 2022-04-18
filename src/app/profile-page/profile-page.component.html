@@ -1,27 +1,29 @@
 <app-navbar></app-navbar>
 
 <div class="user-details">
-    <mat-card-header>
-        <mat-card-title class="profile-title">
-            Your Profile
-        </mat-card-title>
-    </mat-card-header>
-    <mat-card-content> Username: {{ user.Username }}</mat-card-content>
-    <mat-card-content> Email: {{ user.Email }} </mat-card-content>
-    <mat-card-content>
-        Birthday:
-        {{ user.Birthday | date: "mediumDate" }}
-    </mat-card-content>
-    <br>
-    <br>
-    <button mat-raised-button (click)="deleteUser()" color="primary">
-        Delete My Account
-    </button>
-    <br>
-    <br>
-    <button mat-raised-button (click)="displayEditUser()" color="primary">
-        Edit My Details
-    </button>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title class="profile-title">
+                Your Profile
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content> Username: {{ user.Username }}</mat-card-content>
+        <mat-card-content> Email: {{ user.Email }} </mat-card-content>
+        <mat-card-content>
+            Birthday:
+            {{ user.Birthday | date: "mediumDate" }}
+        </mat-card-content>
+        <br>
+        <br>
+        <button mat-raised-button (click)="deleteUser()" color="warn">
+            Delete My Account
+        </button>
+        <br>
+        <br>
+        <button mat-raised-button (click)="displayEditUser()" color="primary">
+            Edit My Details
+        </button>
+    </mat-card>
 </div>
 
 <div style="text-align: center">
@@ -39,8 +41,8 @@
                     <img mat-card-image src="{{ movie.ImagePath }}" alt="{{ movie.Title }}" />
                 </mat-card-content>
                 <mat-card-actions>
-                    <button class="profile-btn" mat-raised-button (click)="deleteFavoriteMovie(movie._id)" color="warn"
-                        style="margin-right: 10px">
+                    <button class="profile-btn" mat-raised-button (click)="deleteFavoriteMovie(movie._id)"
+                        color="accent" style="margin-right: 10px">
                         Remove favorite
                     </button>
                 </mat-card-actions>

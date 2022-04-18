@@ -46,11 +46,11 @@ export class MovieCardComponent implements OnInit {
       this.favoriteMovies = resp.FavoriteMovies;
       console.log(this.favoriteMovies);
       this.snackBar.open('Movie has been added to favorites', 'ok', {
-        duration: 5000,
+        duration: 2000,
       });
       this.ngOnInit();
-      this.getFavMovie
     });
+    this.getFavMovie
   }
 
   deleteFavoriteMovie(id: string): void {
