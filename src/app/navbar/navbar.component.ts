@@ -32,7 +32,10 @@ export class NavbarComponent implements OnInit {
   navToMovies(): void {
     this.router.navigate(['movies']);
   }
-
+  /**
+   * Function to logout a user by clearing local storage of any tokens/usernames. 
+   * Users are then redirected to the welcome screen after logout. 
+   */
   logout(): void {
     if (confirm('You sure?')) {
       localStorage.clear();
