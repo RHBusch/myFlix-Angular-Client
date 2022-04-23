@@ -1,3 +1,10 @@
+
+/**
+ * This code details the logic for the Navbar Component. 
+ * The Navbar Component includes three functions: navToProfile, navToMovies, and logout. 
+ * @module NavbarComponent
+ */
+
 import { Component, OnInit } from '@angular/core';
 
 import { MatDialogModule } from '@angular/material/dialog';
@@ -25,15 +32,20 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function navToProfile directs a user to the profile page 
+   */
   navToProfile(): void {
     this.router.navigate(['profile']);
   }
-
+  /**
+     * Function navToMovies directs a user to the movies page 
+     */
   navToMovies(): void {
     this.router.navigate(['movies']);
   }
   /**
-   * Function to logout a user by clearing local storage of any tokens/usernames. 
+   * Function logout clears localStorage of any usernames or tokens, etc.
    * Users are then redirected to the welcome screen after logout. 
    */
   logout(): void {

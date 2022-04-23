@@ -1,3 +1,8 @@
+/**
+ * The AppRoutingModule powers the Angular Router and navigation in the app. 
+ * @module AppRoutingModule
+ */
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

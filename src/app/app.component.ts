@@ -1,8 +1,9 @@
+/**
+ * The AppComponent is the root component of the entire app --- it renders in index.html
+ * @module AppComponent
+ */
+
 import { Component } from '@angular/core';
-import { MovieCardComponent } from './movie-card/movie-card.component';
-import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',

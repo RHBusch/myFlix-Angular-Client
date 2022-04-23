@@ -1,3 +1,9 @@
+/**
+ * This code creates the logic running the DisplayDirectorComponent.
+ * It renders a mat dialog displaying director information.
+ * @module DisplayDirectorComponent
+ */
+
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -7,6 +13,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./display-director.component.scss']
 })
 export class DisplayDirectorComponent implements OnInit {
+
+  /**
+   * MAT_DIALOG_DATA injection token is used to pass data from the MovieCardComponenet to the constructor. 
+   * @param data 
+   */
 
   constructor(
     @Inject(MAT_DIALOG_DATA)

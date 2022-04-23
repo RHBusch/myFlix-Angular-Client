@@ -29,6 +29,11 @@ import { DisplayGenreComponent } from './display-genre/display-genre.component';
 import { DisplayDirectorComponent } from './display-director/display-director.component';
 import { DisplayEditUserComponent } from './display-edit-user/display-edit-user.component';
 
+/**
+ * Defining intra-app navigation using the Angular Router as set in the AppRoutingModule
+ * Importing all of the components required for the app to function.
+ * @module AppModule
+ */
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
